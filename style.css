@@ -1,0 +1,393 @@
+/* --- ReadToRest Consolidated Styles --- */
+
+/* 1. Base Setup */
+body {
+    font-family: 'Georgia', serif; 
+    background-color: #f3f0f7; 
+    margin: 0;
+    color: #2d2438;
+    line-height: 1.6;
+}
+
+/* 2. Navigation Bar */
+.navbar {
+    background: #ffffff;
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(108, 92, 231, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #6c5ce7; 
+    text-decoration: none;
+}
+
+.logo span { color: #a29bfe; }
+
+nav a {
+    text-decoration: none;
+    color: #4b4b4b;
+    margin-left: 25px;
+    font-size: 15px;
+    font-family: sans-serif;
+    transition: 0.3s;
+}
+
+nav a:hover { color: #6c5ce7; }
+
+.btn-login {
+    border: 2px solid #6c5ce7;
+    padding: 8px 20px;
+    border-radius: 30px;
+    color: #6c5ce7 !important;
+}
+
+.btn-login:hover {
+    background: #6c5ce7;
+    color: white !important;
+}
+
+/* 3. Hero & Content Layout */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 0;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero h1 { font-size: 38px; color: #4834d4; margin-bottom: 10px; }
+.hero p { font-size: 18px; color: #6c5ce7; font-style: italic; }
+
+h2 { 
+    border-bottom: 2px solid #a29bfe; 
+    display: inline-block; 
+    padding-bottom: 5px; 
+    margin-bottom: 30px; 
+    font-family: sans-serif;
+}
+
+/* 4. Story Cards (Feed) */
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.story-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    border: 1px solid #e0d0f0;
+}
+
+.story-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(108, 92, 231, 0.15); 
+}
+
+.story-cover {
+    height: 120px;
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+}
+
+.story-info { padding: 20px; }
+.story-info h3 { margin: 0; font-size: 20px; color: #2d2438; }
+.author { color: #8e8e8e; font-size: 13px; margin: 10px 0; font-style: italic; }
+.snippet { font-size: 14px; color: #555; }
+
+.read-btn {
+    display: block;
+    margin-top: 15px;
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+/* 5. Auth Forms (Login/Register) */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.auth-form {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(108, 92, 231, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.welcome-icon { font-size: 50px; margin-bottom: 10px; }
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9ff;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.2);
+    background: #fff;
+}
+
+.auth-form button {
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.auth-form button:hover { background: #4834d4; }
+
+/* 6. Alerts & Animations */
+.alert {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.alert.error { background: #fff0f0; color: #d63031; border: 1px solid #ff7675; }
+.alert.success { background: #f1f0ff; color: #6c5ce7; border: 1px solid #a29bfe; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 7. Footer / Switch Auth Links */
+.switch-auth { margin-top: 20px; font-size: 14px; font-family: sans-serif; }
+.switch-auth a { color: #6c5ce7; text-decoration: none; font-weight: bold; }
+
+/* --- 8. Reading Page (read.php) Styles --- */
+
+.full-story {
+    background: white;
+    padding: 60px 80px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.05);
+    max-width: 850px;
+    margin: 40px auto;
+    animation: fadeIn 1s ease-out;
+}
+
+.story-header {
+    text-align: center;
+    border-bottom: 2px solid #f3f0f7;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+}
+
+.story-header h1 {
+    font-size: 48px;
+    color: #2d2438;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+}
+
+.story-header .author {
+    font-size: 16px;
+    color: #6c5ce7;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.story-content {
+    font-size: 21px; /* Optimal reading size */
+    line-height: 1.9; /* Breathable spacing */
+    color: #3d3d3d;
+    white-space: pre-wrap; /* Keeps the line breaks from your textarea */
+    text-align: justify;
+}
+
+.story-footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 2px solid #f3f0f7;
+    text-align: center;
+}
+
+/* Mobile Responsiveness for Reading */
+@media (max-width: 768px) {
+    .full-story {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+    
+    .story-header h1 {
+        font-size: 32px;
+    }
+
+    .story-content {
+        font-size: 18px;
+    }
+}
+
+.story-info a[href^="edit.php"] {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: 1px dashed #a29bfe;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.story-info a[href^="edit.php"]:hover {
+    background: #f1f0ff;
+    border-style: solid;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.edit-link {
+    font-size: 13px;
+    font-family: sans-serif;
+    color: #a29bfe;
+    text-decoration: none;
+    border: 1px dashed #a29bfe;
+    padding: 4px 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.edit-link:hover {
+    background: #6c5ce7;
+    color: white;
+    border-style: solid;
+}
+
+/* Comment Section Styles */
+.comment-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid #f3f0f7;
+}
+
+.comment-form textarea {
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.comment-bubble {
+    background: #f9f8ff;
+    border-left: 4px solid #a29bfe;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.comment-bubble p {
+    margin: 0;
+    font-size: 16px;
+    color: #4b4b4b;
+}
+
+.comment-date {
+    font-size: 11px;
+    color: #b2bec3;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Enhanced "Send Whisper" Button */
+.comment-form button[name="post_comment"] {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px; /* Rounded pill shape */
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Hover Effect: Lifts up and glow increases */
+.comment-form button[name="post_comment"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Click Effect: Smashes down slightly */
+.comment-form button[name="post_comment"]:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(108, 92, 231, 0.2);
+}
+
+.btn-dashboard {
+    background: rgba(108, 99, 255, 0.1);
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: 1px solid #6c63ff;
+}
+
+/* Navigation highlight */
+.navbar nav a.active {
+    border-bottom: 2px solid #ff4d4d;
+    color: #ff4d4d;
+}
+
+/* Form Grouping */
+.input-group {
+    margin-bottom: 15px;
+}
+
+/* Success Alert Animation */
+.alert.success {
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
